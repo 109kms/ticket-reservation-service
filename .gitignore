@@ -1,0 +1,31 @@
+### 1. Spring Boot & Java (백엔드용) ###
+HELP.md
+.gradle
+build/
+bin/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+.classpath
+.project
+.settings
+.sts4-cache
+*.log
+
+### 2. Node & React (프론트엔드용 - 이거 중요 ⭐) ###
+node_modules/
+dist/
+build/
+.env
+.env.local
+.DS_Store
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### 3. IDE & OS (공통) ###
+.idea
+.vscode
+*.swp
+Thumbs.db
+.metadata
