@@ -39,4 +39,29 @@ public class User {
     return u;
   }
   
+  // 비즈니스 로직
+  
+  /*
+   * 포인트 충전
+   */
+  public void chargePoint(Long amount) {
+    if (amount == null || amount <= 0) {
+      throw new IllegalArgumentException("충전 금액은 0보다 커야 합니다.");
+    }
+    this.point += amount;
+  }
+  
+  /*
+   * 포인트 사용(결제)
+   */
+  public void usePoint(Long amount) {
+    if (amount == null || amount <= 0) {
+      throw new IllegalArgumentException("사용 금액은 0보다 커야 합니다.");
+    }
+    if (this.point < amount) {
+      throw new IllegalArgumentException("포인트가 부족합니다.");
+    }
+    this.point -= amount;
+  }
+  
 }
