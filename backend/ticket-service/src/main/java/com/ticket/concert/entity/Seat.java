@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,6 +46,10 @@ public class Seat {
   @Enumerated(EnumType.STRING)
   @Column(nullable = false)
   private SeatStatus seatStatus;
+  
+  // 낙관적 락(Optimistic Lock)을 위한 버전 정보
+  @Version
+  private Long version;
 
   public static Seat create(ConcertSchedule concertSchedule, Integer seatNumber, SeatGrade seatGrade, Long price) {
     Seat s = new Seat();
