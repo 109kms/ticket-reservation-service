@@ -72,5 +72,12 @@ public class Seat {
     }
     this.seatStatus = SeatStatus.TEMPORARY_RESERVED;
   }
+  
+  public void confirm() {
+    if (this.seatStatus != SeatStatus.AVAILABLE && this.seatStatus != SeatStatus.TEMPORARY_RESERVED) {
+      throw new IllegalStateException("예약 가능한 상태가 아닙니다.");
+    }
+    this.seatStatus = SeatStatus.SOLD;
+  }
 
 }

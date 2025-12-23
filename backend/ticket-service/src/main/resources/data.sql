@@ -1,3 +1,6 @@
+-- 테스트 사용자
+INSERT INTO users (email, password, name, point) VALUES ('test@test.com', 'a1234567890', '테스터', 999999999);
+
 -- 1. 공연 생성
 INSERT INTO concerts (title, description) VALUES 
 ('아이유 2025 콘서트', '최고의 감동을 선사합니다.');
