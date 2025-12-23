@@ -33,6 +33,8 @@ public class ReservationServiceImpl implements ReservationService {
     Seat seat = seatRepository.findById(requestDTO.getSeatId())
         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 좌석입니다."));
     
+    user.usePoint(seat.getPrice());  // 포인트 사용
+    
     seat.confirm(); // 좌석 확정처리
     
     Reservation reservation = Reservation.create(user, seat);  // 예약 엔티티 생성
